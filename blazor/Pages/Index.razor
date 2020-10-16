@@ -1,0 +1,48 @@
+@using System.ComponentModel.DataAnnotations;
+@using System.Linq;
+@using Syncfusion.Blazor;
+@using Syncfusion.Blazor.Data;
+@using Syncfusion.Blazor.Inputs;
+@using tmp91.Data;
+
+@page "/"
+
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.Inputs
+
+<div id="menu">
+<SfMenu Items="@MenuItems"></SfMenu>
+
+<br/>
+<SfTextBox Placeholder='First Name' FloatLabelType='@FloatLabelType.Auto'></SfTextBox>
+
+</div>
+
+
+
+
+
+<style>
+    #menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        color: white;
+    }
+
+    #m1, #m2,
+    #m1 .e-anchor-wrap, 
+    #m2 .e-anchor-wrap {
+        width: 300px;
+        height: 300px;
+        color: white;
+    }
+
+</style>
+
+@code {
+    public List<MenuItem> MenuItems = new List<MenuItem>{
+        new MenuItem{ Id="m1", Text= "Counter from index", Url = "/counter" },
+        new MenuItem{ Id="m2", Text= "Fetch from index", Url = "/fetchdata" },
+    };
+}
